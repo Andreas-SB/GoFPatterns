@@ -5,6 +5,7 @@ import java.util.*;
 
 import adapterpattern.adaptees.*;
 import adapterpattern.adapters.DiagnosisRetrieverAdapter;
+import adapterpattern.adapters.RegionCapitalAdapter;
 import adapterpattern.adapters.RegionMidAdapter;
 import adapterpattern.adapters.RegionNorthAdapter;
 import adapterpattern.adapters.RegionSouthAdapter;
@@ -51,6 +52,7 @@ public class Program {
 		adapters.add(new RegionNorthAdapter());
 		adapters.add(new RegionMidAdapter());
 		adapters.add(new RegionSouthAdapter());
+		adapters.add(new RegionCapitalAdapter());
 
 		for (DiagnosisRetrieverAdapter adapter : adapters) {
 			diagnoses.addAll(adapter.getDiagnoses(socialSecurityNumber));
