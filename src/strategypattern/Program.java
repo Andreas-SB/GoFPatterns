@@ -3,6 +3,7 @@ package strategypattern;
 import strategypattern.model.Order;
 import strategypattern.model.OrderLine;
 import strategypattern.model.Product;
+import strategypattern.strategies.CategoryDiscountCalculatorStrategy;
 import strategypattern.strategies.CheapestItemFreeCalculatorStrategy;
 import strategypattern.strategies.FlatDiscountAbovePriceCalculatorStrategy;
 import strategypattern.strategies.PercentDiscountCalculatorStrategy;
@@ -41,6 +42,12 @@ public class Program {
 		System.out.println("Orders above 10,000 get 1,500 off.");
 		order.setTotalsCalculator(new FlatDiscountAbovePriceCalculatorStrategy(10000, 1500));
 		System.out.println("Price with cheapest item free: " + order.getOrderTotal());
+		
+		System.out.println();
+		System.out.println("Setting totals calculator to CategoryDiscountCalculatorStrategy");
+		System.out.println("Orders above with get certain catagories get discount.");
+		order.setTotalsCalculator(new CategoryDiscountCalculatorStrategy("Mouse", 50));
+		System.out.println("Price with catagory discount: " + order.getOrderTotal());
 
 		
 		
