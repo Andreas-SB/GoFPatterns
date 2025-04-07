@@ -34,7 +34,7 @@ public class Program {
 
 		System.out.println();
 		System.out.println("Setting totals calculator to PercentDiscountCalculatorStrategy with 10% off");
-		order.setTotalsCalculator(new PercentDiscountCalculatorStrategy(10));
+		order.setTotalsCalculator(new PercentDiscountCalculatorStrategy((float) 0.1));
 		System.out.println("Price with cheapest item free: " + order.getOrderTotal());
 
 		System.out.println();
@@ -45,7 +45,7 @@ public class Program {
 		
 		System.out.println();
 		System.out.println("Setting totals calculator to CategoryDiscountCalculatorStrategy");
-		System.out.println("Orders above with get certain catagories get discount.");
+		System.out.println("Orders with certain catagories get discount.");
 		order.setTotalsCalculator(new CategoryDiscountCalculatorStrategy("Mouse", 50));
 		System.out.println("Price with catagory discount: " + order.getOrderTotal());
 
